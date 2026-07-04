@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { getAllKana } from '../data/kana'
 import type { KanaType, KanaChar } from '../data/kana'
 import { useProgress } from '../hooks/useProgress'
+import { useSpeech } from '../hooks/useSpeech'
 import './KanaDrill.css'
 
 function shuffle<T>(arr: T[]): T[] {
@@ -19,6 +20,7 @@ export function KanaDrill() {
   const kanaType = type as KanaType
   const allKana = getAllKana(kanaType)
   const { markLearned, isLearned } = useProgress()
+  const { speakJapanese } = useSpeech()
 
   const [queue, setQueue] = useState<KanaChar[]>([])
   const [current, setCurrent] = useState<KanaChar | null>(null)
@@ -97,6 +99,14 @@ export function KanaDrill() {
 
       <div className="drill-card">
         <div className="drill-char">{current.char}</div>
+
+        <button
+          className="drill-speak-btn"
+          onClick={() => speakJapanese(current.char)}
+          title="Listen to pronunciation"
+        >
+          🔊
+        </button>
 
         <div className="drill-input-area">
           <input

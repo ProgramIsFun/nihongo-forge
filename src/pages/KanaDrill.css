@@ -52,8 +52,28 @@
   font-family: var(--font-jp);
   font-size: 96px;
   font-weight: 500;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   line-height: 1;
+}
+
+.drill-speak-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+
+.drill-speak-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  transform: scale(1.1);
 }
 
 .drill-input-area {
