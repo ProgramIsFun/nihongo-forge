@@ -11,13 +11,16 @@ A Japanese learning website to help you master hiragana, katakana, kanji, vocabu
 
 ## Tech Stack
 
-- TBD
+- React 19 + TypeScript
+- Vite
 
 ## Getting Started
 
 ```bash
 git clone git@github.com:ProgramIsFun/nihongo-forge.git
 cd nihongo-forge
+npm install
+npm run dev
 ```
 
 ## License
