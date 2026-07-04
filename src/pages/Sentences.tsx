@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { sentenceService } from '../services/sentenceService'
 import { useSpeech } from '../hooks/useSpeech'
+import { SpeedControl } from '../components/SpeedControl'
 import type { Sentence } from '../data/sentences'
 import './Sentences.css'
 
@@ -13,6 +14,7 @@ export function Sentences() {
   const [showReading, setShowReading] = useState(false)
   const [showTranslation, setShowTranslation] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [speed, setSpeed] = useState(0.85)
   const { speakJapanese } = useSpeech()
 
   async function generate() {
@@ -67,9 +69,11 @@ export function Sentences() {
 
           <div className="sentence-japanese">{sentence.japanese}</div>
 
+          <SpeedControl value={speed} onChange={setSpeed} />
+
           <button
             className="speak-btn"
-            onClick={() => speakJapanese(sentence.japanese)}
+            onClick={() => speakJapanese(sentence.japanese, speed)}
             title="Listen to pronunciation"
           >
             🔊 Listen

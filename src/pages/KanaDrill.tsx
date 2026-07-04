@@ -4,6 +4,7 @@ import { getAllKana } from '../data/kana'
 import type { KanaType, KanaChar } from '../data/kana'
 import { useProgress } from '../hooks/useProgress'
 import { useSpeech } from '../hooks/useSpeech'
+import { SpeedControl } from '../components/SpeedControl'
 import './KanaDrill.css'
 
 function shuffle<T>(arr: T[]): T[] {
@@ -28,6 +29,7 @@ export function KanaDrill() {
   const [result, setResult] = useState<'correct' | 'wrong' | null>(null)
   const [score, setScore] = useState({ correct: 0, wrong: 0 })
   const [revealed, setRevealed] = useState(false)
+  const [speed, setSpeed] = useState(0.85)
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -100,9 +102,11 @@ export function KanaDrill() {
       <div className="drill-card">
         <div className="drill-char">{current.char}</div>
 
+        <SpeedControl value={speed} onChange={setSpeed} />
+
         <button
           className="drill-speak-btn"
-          onClick={() => speakJapanese(current.char)}
+          onClick={() => speakJapanese(current.char, speed)}
           title="Listen to pronunciation"
         >
           🔊
