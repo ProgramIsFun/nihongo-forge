@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { Kana } from './pages/Kana'
 import { KanaDrill } from './pages/KanaDrill'
+import { Sentences } from './pages/Sentences'
 import './App.css'
 
 function Home() {
@@ -65,11 +66,11 @@ function Home() {
               <h3>Vocabulary Builder</h3>
               <p>Spaced repetition system that adapts to your pace. Remember words, not just cram them.</p>
             </div>
-            <div className="feature-card">
+            <a href="/sentences" className="feature-card">
               <div className="feature-icon">文</div>
               <h3>Grammar Lessons</h3>
               <p>Clear explanations with real examples. From basic particles to advanced structures.</p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -123,6 +124,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/kana" element={<Kana />} />
       <Route path="/kana/:type/drill" element={<KanaDrill />} />
+      <Route path="/sentences" element={<Sentences />} />
     </Routes>
   )
 }
