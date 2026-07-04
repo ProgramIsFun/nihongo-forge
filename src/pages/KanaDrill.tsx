@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { getAllKana, KanaType, KanaChar } from '../data/kana'
+import { getAllKana } from '../data/kana'
+import type { KanaType, KanaChar } from '../data/kana'
 import { useProgress } from '../hooks/useProgress'
 import './KanaDrill.css'
 

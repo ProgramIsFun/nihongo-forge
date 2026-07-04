@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { hiragana, katakana, KanaType, getAllKana } from '../data/kana'
+import { hiragana, katakana, getAllKana } from '../data/kana'
+import type { KanaType } from '../data/kana'
 import { KanaCard } from '../components/KanaCard'
 import { useProgress } from '../hooks/useProgress'
 import './Kana.css'

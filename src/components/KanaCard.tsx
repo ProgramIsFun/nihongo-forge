@@ -1,4 +1,4 @@
-import { KanaChar } from '../data/kana'
+import type { KanaChar } from '../data/kana'
 
 interface KanaCardProps {
   kana: KanaChar
