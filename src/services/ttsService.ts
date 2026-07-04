@@ -1,5 +1,5 @@
 export interface TTSProvider {
-  speak(text: string, lang?: string): void
+  speak(text: string, lang?: string, rate?: number): void
   stop(): void
   isSupported(): boolean
 }
@@ -10,12 +10,12 @@ class WebSpeechProvider implements TTSProvider {
     return 'speechSynthesis' in window
   }
 
-  speak(text: string, lang: string = 'ja-JP'): void {
+  speak(text: string, lang: string = 'ja-JP', rate: number = 0.85): void {
     if (!this.isSupported()) return
     window.speechSynthesis.cancel()
     const utterance = new SpeechSynthesisUtterance(text)
     utterance.lang = lang
-    utterance.rate = 0.85
+    utterance.rate = Math.min(10, Math.max(0.1, rate))
     window.speechSynthesis.speak(utterance)
   }
 

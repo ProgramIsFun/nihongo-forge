@@ -1,12 +1,12 @@
 import { ttsService } from '../services/ttsService'
 
 export function useSpeech() {
-  function speakJapanese(text: string) {
-    ttsService.speak(text, 'ja-JP')
+  function speakJapanese(text: string, rate: number = 0.85) {
+    ttsService.speak(text, 'ja-JP', rate)
   }
 
-  function speakEnglish(text: string) {
-    ttsService.speak(text, 'en-US')
+  function speakEnglish(text: string, rate: number = 1) {
+    ttsService.speak(text, 'en-US', rate)
   }
 
   function stop() {
