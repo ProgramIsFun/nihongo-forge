@@ -1,6 +1,9 @@
+import { Routes, Route } from 'react-router-dom'
+import { Kana } from './pages/Kana'
+import { KanaDrill } from './pages/KanaDrill'
 import './App.css'
 
-function App() {
+function Home() {
   return (
     <div className="app">
       <nav className="nav">
@@ -12,7 +15,7 @@ function App() {
           <div className="nav-links">
             <a href="#features">Features</a>
             <a href="#levels">Levels</a>
-            <a href="#start" className="btn btn-sm">Start Learning</a>
+            <a href="/kana" className="btn btn-sm">Start Learning</a>
           </div>
         </div>
       </nav>
@@ -29,7 +32,7 @@ function App() {
           with structured lessons and spaced repetition.
         </p>
         <div className="hero-actions">
-          <a href="#start" className="btn btn-primary">Get Started Free</a>
+          <a href="/kana" className="btn btn-primary">Get Started Free</a>
           <a href="#features" className="btn btn-ghost">See Features</a>
         </div>
         <div className="hero-preview">
@@ -47,11 +50,11 @@ function App() {
           <h2>Everything you need</h2>
           <p className="section-sub">Structured path from your first character to fluent conversation.</p>
           <div className="features-grid">
-            <div className="feature-card">
+            <a href="/kana" className="feature-card">
               <div className="feature-icon">あ</div>
               <h3>Kana Mastery</h3>
               <p>Learn all 46 hiragana and 46 katakana with interactive quizzes and stroke order practice.</p>
-            </div>
+            </a>
             <div className="feature-card">
               <div className="feature-icon">漢</div>
               <h3>Kanji System</h3>
@@ -97,7 +100,7 @@ function App() {
         <div className="section-inner">
           <h2>Ready to forge your Japanese?</h2>
           <p>Start learning today. No account required.</p>
-          <a href="#" className="btn btn-primary btn-lg">Start Learning Free</a>
+          <a href="/kana" className="btn btn-primary btn-lg">Start Learning Free</a>
         </div>
       </section>
 
@@ -111,6 +114,16 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/kana" element={<Kana />} />
+      <Route path="/kana/:type/drill" element={<KanaDrill />} />
+    </Routes>
   )
 }
 

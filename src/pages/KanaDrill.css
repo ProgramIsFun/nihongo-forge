@@ -1,0 +1,126 @@
+.drill-page {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.drill-header {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.drill-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 4px 12px;
+  background: var(--bg-alt);
+  border-radius: 100px;
+}
+
+.stat.correct {
+  color: #16a34a;
+  background: #f0fdf4;
+}
+
+.stat.wrong {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+/* Card */
+.drill-card {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.drill-char {
+  font-family: var(--font-jp);
+  font-size: 96px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  line-height: 1;
+}
+
+.drill-input-area {
+  margin-bottom: 24px;
+}
+
+.drill-input {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px 20px;
+  font-size: 20px;
+  font-family: var(--font);
+  text-align: center;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.drill-input:focus {
+  border-color: var(--accent);
+}
+
+.drill-input.correct {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.drill-input.wrong {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.drill-result {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.drill-result.correct {
+  color: #16a34a;
+}
+
+.drill-result.wrong {
+  color: #dc2626;
+}
+
+.drill-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.drill-progress {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .drill-char {
+    font-size: 72px;
+  }
+
+  .drill-card {
+    padding: 32px 20px;
+  }
+}
