@@ -16,6 +16,8 @@ function Home() {
           <div className="nav-links">
             <a href="#features">Features</a>
             <a href="#levels">Levels</a>
+            <a href="/kana">Kana</a>
+            <a href="/sentences">Sentences</a>
             <a href="/kana" className="btn btn-sm">Start Learning</a>
           </div>
         </div>
@@ -102,6 +104,7 @@ function Home() {
           <h2>Ready to forge your Japanese?</h2>
           <p>Start learning today. No account required.</p>
           <a href="/kana" className="btn btn-primary btn-lg">Start Learning Free</a>
+          <a href="/sentences" className="btn btn-ghost btn-lg">Practice Sentences</a>
         </div>
       </section>
 
